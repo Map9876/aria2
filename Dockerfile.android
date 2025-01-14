@@ -147,3 +147,6 @@ RUN autoreconf -i && \
       PKG_CONFIG_LIBDIR="$PREFIX/lib/pkgconfig" && \
     make -j$(nproc) && \
     $STRIP src/aria2c
+
+RUN mkdir -p out-file
+RUN cp /root/build/aria2/src/aria2c out-file 
