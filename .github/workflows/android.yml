@@ -12,12 +12,6 @@ jobs:
     runs-on: ubuntu-22.04
 
     steps:
-    - name: Get repository name
-      id: repo-name
-      uses: MariachiBear/get-repo-name-action@v1.1.0
-      with:
-        with-owner: 'true'
-        string-case: 'uppercase'
 
     - uses: actions/checkout@v4
     - name: Set up Docker Buildx
@@ -28,7 +22,7 @@ jobs:
         file: Dockerfile.android
         context: .
         push: true
-        tags: ${{ steps.repo-name.outputs.repository-name }}
+        tags: "8"
 
     - name: 上传工件
       uses: actions/upload-artifact@v3
